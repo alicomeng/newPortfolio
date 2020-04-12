@@ -73,7 +73,7 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-image: linear-gradient(to right, #bdc3c7, #2c3e50);
   -webkit-background-clip: text;
   color: transparent;
   transition: all .2s; }
@@ -148,15 +148,15 @@ body {
 
 .btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
-  color: #55c57a;
+  color: #6f93ac;
   display: inline-block;
   text-decoration: none;
-  border-bottom: 1px solid #55c57a;
+  border-bottom: 1px solid #6f93ac;
   padding: 3px;
   transition: all .2s; }
 
 .btn-text:hover {
-  background-color: #55c57a;
+  background-color: #6f93ac;
   color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
   transform: translateY(-2px); }
@@ -185,7 +185,7 @@ body {
       left: 4rem;
       top: 10rem; }
     .composition__photo:hover {
-      outline: 0.5rem dotted #55c57a;
+      outline: 0.5rem dotted #6f93ac;
       transform: scale(1.1) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
       z-index: 20; }
@@ -206,13 +206,45 @@ body {
     font-size: 6rem;
     margin-bottom: .5rem;
     display: inline-block;
-    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    background-image: linear-gradient(to right, #bdc3c7, #2c3e50);
     -webkit-background-clip: text;
     color: transparent; }
 
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: 50rem;
+  position: relative; }
+  .card__side {
+    color: black;
+    font-size: 2rem;
+    height: 50rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0.9rem 2.5rem rgba(0, 0, 0, 0.5); }
+    .card__side--front {
+      background-color: #bdc3c7; }
+    .card__side--back {
+      transform: rotateY(-180deg); }
+      .card__side--back-1 {
+        background: #bdc3c7;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right bottom, #bdc3c7, #2c3e50); }
+  .card:hover .card__side--front {
+    transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0deg); }
+
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-image: linear-gradient(to right bottom, rgba(189, 195, 199, 0.8), rgba(44, 62, 80, 0.8)), url("../img/hero.jpg");
   background-size: cover;
   background-position: top;
   position: relative;
@@ -263,9 +295,14 @@ body {
 
 .section-features {
   padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/nat-4.jpg");
+  background-image: linear-gradient(to right bottom, rgba(189, 195, 199, 0.8), rgba(44, 62, 80, 0.8)), url("../img/nat-4.jpg");
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -12rem; }
   .section-features > * {
     transform: skewY(7deg); }
+
+.section-tours {
+  background-color: #f7f7f7f7;
+  padding: 25rem 0;
+  margin-top: -10rem; }
