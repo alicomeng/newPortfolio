@@ -79,7 +79,7 @@ body {
   transition: all .2s; }
   .heading-secondary:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
-    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.5); }
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.3); }
 
 .h3 {
   font-size: 1.6rem;
@@ -121,14 +121,14 @@ body {
 
 .btn:hover {
   transform: translateY(-0.8rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); }
   .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
 .btn:active {
   transform: translateY(-0.5rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3); }
 
 .btn::after {
   content: "";
@@ -158,18 +158,18 @@ body {
 .btn-text:hover {
   background-color: #6f93ac;
   color: #fff;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
   transform: translateY(-2px); }
 
 .btn-text:active {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   transform: translateY(0); }
 
 .composition {
   position: relative; }
   .composition__photo {
     width: 55%;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
     border-radius: 2px;
     position: absolute;
     z-index: 10;
@@ -187,7 +187,7 @@ body {
     .composition__photo:hover {
       outline: 0.5rem dotted #6f93ac;
       transform: scale(1.1) translateY(-0.5rem);
-      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.3);
       z-index: 20; }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.8); }
@@ -198,7 +198,7 @@ body {
   padding: 2.5rem;
   text-align: center;
   border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
   transition: transform .2s; }
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.05); }
@@ -216,8 +216,6 @@ body {
   height: 50rem;
   position: relative; }
   .card__side {
-    color: black;
-    font-size: 2rem;
     height: 50rem;
     transition: all 0.8s ease;
     position: absolute;
@@ -226,7 +224,8 @@ body {
     width: 100%;
     backface-visibility: hidden;
     border-radius: 5px;
-    box-shadow: 0 0.9rem 2.5rem rgba(0, 0, 0, 0.5); }
+    box-shadow: 0 0.9rem 2.5rem rgba(0, 0, 0, 0.3);
+    overflow: hidden; }
     .card__side--front {
       background-color: #bdc3c7; }
     .card__side--back {
@@ -241,6 +240,27 @@ body {
     transform: rotateY(180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0deg); }
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .card__picture--1 {
+      background-image: linear-gradient(#bdc3c7, #2c3e50 80%), url(../img/nat-5.jpg); }
+    .card__picture--2 {
+      background-image: url(../img/nat-5.jpg); }
+    .card__picture--3 {
+      background-image: url(../img/nat-5.jpg); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    text-align: right; }
 
 .header {
   height: 95vh;
@@ -248,6 +268,7 @@ body {
   background-size: cover;
   background-position: top;
   position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
   .header__logo-box {
     position: absolute;
